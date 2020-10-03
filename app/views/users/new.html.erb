@@ -1,0 +1,37 @@
+<h1>Sign up</h1>
+
+<!--   simp html form
+<form action="/users" method="post" accept-charset="UTF-8">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <label for="username">Username:</label>
+    <input type="text" name="user[username]">
+    </br>
+    <label for="email">Email:</label>
+    <input type="email" name="user[email]">
+    </br>
+    <label for="password">Password</label>
+    <input type="password" name="user[password]">
+    </br>
+    <button type="submit">Submit</button>
+
+</form>
+
+-->
+
+<!--   Chad overloard rails choo choo form -->
+
+<%= form_with model: @user do |f| %>
+
+        <%= f.label 'Username:'%>
+        <%= f.text_field :username, placeholder: "Username" %>
+    <br />
+        <%= f.label 'Email:'%>
+        <%= f.text_field :email, placeholder: "Email" %>
+    <br />
+        <%= f.label 'Password:'%>
+        <%= f.password_field :password, placeholder: "Password" %>
+    <br />
+        <%= f.submit 'Sign up!'%>
+
+<% end %>
